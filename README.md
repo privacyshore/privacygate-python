@@ -1,5 +1,5 @@
 # privacygate-python
-**pip install git+https://github.com/privacyshore/privacygate-python.git
+**pip install privacygate**
 
 PrivacyGate Python
 
