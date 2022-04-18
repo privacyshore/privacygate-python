@@ -21,7 +21,7 @@ class Client(object):
     Entry point for making requests to the Coinbase API.
     Full API docs available here: https://commerce.coinbase.com/docs/api/
     """
-    BASE_API_URI = 'https://api.commerce.coinbase.com/'
+    BASE_API_URI = 'https://api.privacygate.io/'
     API_VERSION = '2018-03-22'
 
     def __init__(self, api_key, base_api_uri=None, api_version=None, timeout=None):
