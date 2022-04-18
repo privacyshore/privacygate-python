@@ -1,7 +1,7 @@
-[![CircleCI](https://circleci.com/gh/coinbase/coinbase-commerce-python/tree/master.svg?style=svg)](https://circleci.com/gh/coinbase/coinbase-commerce-python/tree/master)
+[![CircleCI](https://circleci.com/gh/coinbase/privacygate-python/tree/master.svg?style=svg)](https://circleci.com/gh/coinbase/privacygate-python/tree/master)
 
-# coinbase-commerce-python
-**Note: This repository is not actively maintained.**
+# privacygate-python
+**pip install git+https://github.com/privacyshore/privacygate-python.git
 
 Coinbase Commerce Python
 
@@ -30,7 +30,7 @@ The following libraries will be installed when you install the client library:
 
 ## Documentation
 
-For more details visit [Coinbase API docs](https://commerce.coinbase.com/docs/api/).
+For more details visit [Coinbase API docs](https://privacygate.io/docs/).
 
 To start using library, you need to register on [Commerce SignUp](https://commerce.coinbase.com/signup).
 And get your ``API_KEY`` from user settings.
@@ -87,12 +87,7 @@ All errors occuring during interaction with the API will be raised as exceptions
 
 Install with ``pip``:
 
-    pip install --upgrade coinbase-commerce
-
-or with ``easy_install``:
-
-    easy_install --upgrade coinbase-commerce
-
+    pip install --upgrade git+https://github.com/privacyshore/privacygate-python.git
 
 ## Usage
 ```python
@@ -101,7 +96,7 @@ from coinbase_commerce.client import Client
 client = Client(api_key=API_KEY)
 ```
 ## Checkouts 
-[Checkouts API docs](https://commerce.coinbase.com/docs/api/#checkouts)
+[Checkouts API docs](https://privacygate.io/docs/#checkouts)
 ### Retrieve
 ```python
 checkout = client.checkout.retrieve(<checkout_id>)
@@ -157,7 +152,7 @@ for checkout in client.checkout.list_paging_iter():
 
 ```
 ## Charges
-[Charges API docs](https://commerce.coinbase.com/docs/api/#charges)
+[Charges API docs](https://privacygate.io/docs/#charges)
 ### Retrieve
 ```python
 charge = client.charge.retrieve(<charge_id>)
@@ -196,7 +191,7 @@ for charge in client.charge.list_paging_iter():
     print("{!r}".format(charge))
 ```
 ## Events
-[Events API Docs](https://commerce.coinbase.com/docs/api/#events)
+[Events API Docs](https://privacygate.io/docs/#events)
 ### Retrieve
 ```python
 event = client.event.retrieve(<event_id>)
