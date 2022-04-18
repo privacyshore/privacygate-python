@@ -1,4 +1,4 @@
-from coinbase_commerce.api_resources.event import Event
+from privacygate.api_resources.event import Event
 from tests.base_test_case import BaseTestCase
 
 

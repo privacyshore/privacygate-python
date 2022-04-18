@@ -2,9 +2,9 @@ from mock import PropertyMock, mock
 from requests import RequestException
 from requests.sessions import Session
 
-from coinbase_commerce.api_resources import Charge, Checkout, Event
-from coinbase_commerce.client import Client
-from coinbase_commerce.error import (
+from privacygate.api_resources import Charge, Checkout, Event
+from privacygate.client import Client
+from privacygate.error import (
     APIError,
     AuthenticationError,
     InternalServerError,
@@ -15,7 +15,7 @@ from coinbase_commerce.error import (
     ServiceUnavailableError,
     ValidationError,
 )
-from coinbase_commerce.response import CoinbaseResponse
+from privacygate.response import PrivacyGateResponse
 from tests.base_test_case import BaseTestCase
 
 
@@ -70,7 +70,7 @@ class TestApiClient(BaseTestCase):
         client = TestApiClient.mock_client()
         self.stub_request('get', 'foo', {})
         resp = client._request('get', 'foo')
-        self.assertTrue(isinstance(resp, CoinbaseResponse))
+        self.assertTrue(isinstance(resp, PrivacyGateResponse))
 
     def test_handle_exception(self):
         client = TestApiClient.mock_client()
@@ -170,7 +170,7 @@ class TestApiClient(BaseTestCase):
         mock.MagicMock.headers = {}
         client = TestApiClient.mock_client()
         resp = client._proceed_response(mock.MagicMock)
-        self.assertIsInstance(resp, CoinbaseResponse)
+        self.assertIsInstance(resp, PrivacyGateResponse)
 
     @staticmethod
     def mock_client():

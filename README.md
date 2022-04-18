@@ -1,9 +1,7 @@
-[![CircleCI](https://circleci.com/gh/coinbase/privacygate-python/tree/master.svg?style=svg)](https://circleci.com/gh/coinbase/privacygate-python/tree/master)
-
 # privacygate-python
 **pip install git+https://github.com/privacyshore/privacygate-python.git
 
-Coinbase Commerce Python
+PrivacyGate Python
 
 # Table of contents
 
@@ -30,14 +28,14 @@ The following libraries will be installed when you install the client library:
 
 ## Documentation
 
-For more details visit [Coinbase API docs](https://privacygate.io/docs/).
+For more details visit [PrivacyGate API docs](https://privacygate.io/docs/).
 
-To start using library, you need to register on [Commerce SignUp](https://commerce.coinbase.com/signup).
+To start using library, you need to register on [Commerce SignUp](https://dash.privacygate.io/register).
 And get your ``API_KEY`` from user settings.
 
 Next create a ``Client`` object for interacting with the API:
 ```python
-from coinbase_commerce.client import Client
+from privacygate.client import Client
 
 API_KEY = "API KEY"
 client = Client(api_key=API_KEY)
@@ -91,7 +89,7 @@ Install with ``pip``:
 
 ## Usage
 ```python
-from coinbase_commerce.client import Client
+from privacygate.client import Client
 
 client = Client(api_key=API_KEY)
 ```

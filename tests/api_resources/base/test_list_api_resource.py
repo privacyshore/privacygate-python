@@ -1,5 +1,5 @@
-from coinbase_commerce.api_resources import Charge
-from coinbase_commerce.api_resources.base import ListAPIResource
+from privacygate.api_resources import Charge
+from privacygate.api_resources.base import ListAPIResource
 from tests.base_test_case import BaseTestCase
 
 

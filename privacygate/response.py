@@ -2,9 +2,9 @@ import json
 import warnings
 
 
-class CoinbaseResponse(object):
+class PrivacyGateResponse(object):
     """
-    Representation for coinbase commerce response object
+    Representation for privacygate commerce response object
     """
 
     def __init__(self, body, code, headers):

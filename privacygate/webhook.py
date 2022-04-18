@@ -2,10 +2,10 @@ import hmac
 import json
 from hashlib import sha256
 
-from coinbase_commerce.api_resources import Event
-from coinbase_commerce.error import SignatureVerificationError
-from coinbase_commerce.error import WebhookInvalidPayload
-from coinbase_commerce.util import secure_compare
+from privacygate.api_resources import Event
+from privacygate.error import SignatureVerificationError
+from privacygate.error import WebhookInvalidPayload
+from privacygate.util import secure_compare
 
 
 class Webhook(object):

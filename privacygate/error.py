@@ -1,10 +1,10 @@
 import json
 
-from coinbase_commerce.compat import py2_unicode_compatible
+from privacygate.compat import py2_unicode_compatible
 
 
 @py2_unicode_compatible
-class CoinbaseError(Exception):
+class PrivacyGateError(Exception):
     """
     Base error class for all exceptions raised in this library.
     """
@@ -18,7 +18,7 @@ class CoinbaseError(Exception):
             return msg
 
 
-class SignatureVerificationError(CoinbaseError):
+class SignatureVerificationError(PrivacyGateError):
     """
     Raised for webhook signature verification failure
     """
@@ -33,9 +33,9 @@ class SignatureVerificationError(CoinbaseError):
             self._message = u"<empty message>"
 
 
-class APIError(CoinbaseError):
+class APIError(PrivacyGateError):
     """
-    Raised for errors related to interacting with the Coinbase API server.
+    Raised for errors related to interacting with the PrivacyGate API server.
     """
 
     def __init__(self,

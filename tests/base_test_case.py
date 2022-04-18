@@ -1,6 +1,6 @@
 import unittest
 
-import coinbase_commerce
+import privacygate
 from tests.request_mock import RequestMock
 
 API_KEY = 'testkey'
@@ -11,7 +11,7 @@ class BaseTestCase(unittest.TestCase):
         super(BaseTestCase, self).setUp()
         self.request_mock = RequestMock()
         self.request_mock.start()
-        self.client = coinbase_commerce.Client(API_KEY)
+        self.client = privacygate.Client(API_KEY)
 
     def tearDown(self):
         super(BaseTestCase, self).tearDown()

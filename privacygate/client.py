@@ -2,24 +2,24 @@ import textwrap
 
 import requests
 
-from coinbase_commerce.api_resources.charge import Charge
-from coinbase_commerce.api_resources.checkout import Checkout
-from coinbase_commerce.api_resources.event import Event
-from coinbase_commerce.auth import APIAuth
-from coinbase_commerce.compat import quote
-from coinbase_commerce.compat import urljoin
-from coinbase_commerce.error import APIError
-from coinbase_commerce.error import build_api_error
-from coinbase_commerce.response import CoinbaseResponse
-from coinbase_commerce.util import check_uri_security, lazy_property
-from coinbase_commerce.util import encode_params
+from privacygate.api_resources.charge import Charge
+from privacygate.api_resources.checkout import Checkout
+from privacygate.api_resources.event import Event
+from privacygate.auth import APIAuth
+from privacygate.compat import quote
+from privacygate.compat import urljoin
+from privacygate.error import APIError
+from privacygate.error import build_api_error
+from privacygate.response import PrivacyGateResponse
+from privacygate.util import check_uri_security, lazy_property
+from privacygate.util import encode_params
 
 
 class Client(object):
     """
-    API Client for the Coinbase API.
-    Entry point for making requests to the Coinbase API.
-    Full API docs available here: https://commerce.coinbase.com/docs/api/
+    API Client for the PrivacyGate API.
+    Entry point for making requests to the PrivacyGate API.
+    Full API docs available here: https://privacygate.io/docs
     """
     BASE_API_URI = 'https://api.privacygate.io/'
     API_VERSION = '2018-03-22'
@@ -63,7 +63,7 @@ class Client(object):
 
     def _request(self, method, *relative_path_parts, **kwargs):
         """
-        Internal helper for creating HTTP requests to the Coinbase Commerce API.
+        Internal helper for creating HTTP requests to the PrivacyGate API.
         Raises the appropriate exceptions when necessary; otherwise, returns the
         response.
         """
@@ -87,16 +87,16 @@ class Client(object):
     def _proceed_response(self, response):
         if not response.ok:
             raise build_api_error(response)
-        return CoinbaseResponse(body=response.content,
+        return PrivacyGateResponse(body=response.content,
                                 code=response.status_code,
                                 headers=response.headers)
 
     def _handle_request_error(self, e):
         if isinstance(e, requests.exceptions.RequestException):
-            msg = "Unexpected error communicating with Coinbase Commerce."
+            msg = "Unexpected error communicating with PrivacyGate."
             err = "{}: {}".format(type(e).__name__, str(e))
         else:
-            msg = ("Unexpected error communicating with Coinbase Commerce. "
+            msg = ("Unexpected error communicating with PrivacyGate. "
                    "It looks like there's probably a configuration "
                    "issue locally.")
             err = "A {} was raised".format(type(e).__name__)

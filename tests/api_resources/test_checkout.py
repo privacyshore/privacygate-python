@@ -1,4 +1,4 @@
-from coinbase_commerce.api_resources.checkout import Checkout
+from privacygate.api_resources.checkout import Checkout
 from tests.base_test_case import BaseTestCase
 
 

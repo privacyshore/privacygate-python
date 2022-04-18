@@ -1,8 +1,8 @@
-from coinbase_commerce.api_resources.event import Event
-from coinbase_commerce.error import SignatureVerificationError
-from coinbase_commerce.error import WebhookInvalidPayload
-from coinbase_commerce.webhook import Webhook
-from coinbase_commerce.webhook import WebhookSignature
+from privacygate.api_resources.event import Event
+from privacygate.error import SignatureVerificationError
+from privacygate.error import WebhookInvalidPayload
+from privacygate.webhook import Webhook
+from privacygate.webhook import WebhookSignature
 from tests.base_test_case import BaseTestCase
 
 PAYLOAD_STR = '{"id":1,' \
@@ -17,7 +17,7 @@ PAYLOAD_STR = '{"id":1,' \
               '"code":"66BEOV2A",' \
               '"name":"The Sovereign Individual",' \
               '"description":"Mastering the Transition to the Information Age",' \
-              '"hosted_url":"https://commerce.coinbase.com/charges/66BEOV2A",' \
+              '"hosted_url":"https://pay.privacygate.io/charges/66BEOV2A",' \
               '"created_at":"2017-01-31T20:49:02Z",' \
               '"expires_at":"2017-01-31T21:04:02Z",' \
               '"timeline":[{"time":"2017-01-31T20:49:02Z","status":"NEW"}],' \

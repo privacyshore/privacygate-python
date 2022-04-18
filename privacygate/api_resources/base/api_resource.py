@@ -1,5 +1,5 @@
-from coinbase_commerce import util
-from coinbase_commerce.api_resources.base import APIObject
+from privacygate import util
+from privacygate.api_resources.base import APIObject
 
 
 class APIResource(APIObject):

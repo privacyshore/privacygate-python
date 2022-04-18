@@ -1,4 +1,4 @@
-from coinbase_commerce.api_resources.base import APIResource
+from privacygate.api_resources.base import APIResource
 from tests.base_test_case import BaseTestCase
 
 

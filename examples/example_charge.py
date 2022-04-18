@@ -7,7 +7,7 @@ metadata	          hash	Optional	Developer defined key value pairs
 redirect_url	    string	Optional	Redirect URL
 """
 
-from coinbase_commerce.client import Client
+from privacygate.client import Client
 
 API_KEY = "API_KEY"
 

@@ -1,16 +1,16 @@
 import json
 from mock import patch, ANY
 
-import coinbase_commerce
-from coinbase_commerce.response import CoinbaseResponse
+import privacygate
+from privacygate.response import PrivacyGateResponse
 
 
 class RequestMock(object):
     def __init__(self):
         self._stub_request_handler = RequestStub()
-        self._real_coinbase_request = coinbase_commerce.Client._request
+        self._real_privacygate_request = privacygate.Client._request
         self.request_patcher = patch(
-            'coinbase_commerce.Client._request',
+            'privacygate.Client._request',
             side_effect=self._patched_request,
             autospec=True)
 
@@ -22,7 +22,7 @@ class RequestMock(object):
 
     def _patched_request(self, api_client, method, url, *args, **kwargs):
         response = self._stub_request_handler.get_response(method, url)
-        return response or self._real_coinbase_request(api_client, method, url,
+        return response or self._real_privacygate_request(api_client, method, url,
                                                        *args, **kwargs)
 
     def stub_request(self, method, url, body=None, code=200, headers=None):
@@ -60,5 +60,5 @@ class RequestStub(object):
             body, code, headers = self._entries[key].pop(0)
             if not isinstance(body, str):
                 body = json.dumps(body)
-            return CoinbaseResponse(body=body, code=code, headers=headers)
+            return PrivacyGateResponse(body=body, code=code, headers=headers)
         return None

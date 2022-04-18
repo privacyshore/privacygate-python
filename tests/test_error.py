@@ -1,4 +1,4 @@
-from coinbase_commerce.error import APIError
+from privacygate.error import APIError
 from tests.base_test_case import BaseTestCase
 
 

@@ -1,4 +1,4 @@
-from coinbase_commerce.client import Client
+from privacygate.client import Client
 
 API_KEY = "API_KEY"
 client = Client(api_key=API_KEY)

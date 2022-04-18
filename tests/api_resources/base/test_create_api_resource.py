@@ -1,5 +1,5 @@
-from coinbase_commerce.api_resources import Checkout
-from coinbase_commerce.api_resources.base import CreateAPIResource
+from privacygate.api_resources import Checkout
+from privacygate.api_resources.base import CreateAPIResource
 from tests.base_test_case import BaseTestCase
 
 

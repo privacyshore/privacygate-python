@@ -1,6 +1,6 @@
-from coinbase_commerce.api_resources.base import CreateAPIResource
-from coinbase_commerce.api_resources.base import ListAPIResource
-from coinbase_commerce import util
+from privacygate.api_resources.base import CreateAPIResource
+from privacygate.api_resources.base import ListAPIResource
+from privacygate import util
 
 
 @util.register_resource_cls

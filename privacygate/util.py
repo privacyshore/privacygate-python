@@ -5,8 +5,8 @@ import warnings
 
 import six
 
-from coinbase_commerce.compat import urlparse
-from coinbase_commerce.response import CoinbaseResponse
+from privacygate.compat import urlparse
+from privacygate.response import PrivacyGateResponse
 
 RESOURCE_MAP = {}
 
@@ -14,7 +14,7 @@ RESOURCE_MAP = {}
 def register_resource_cls(*args, **kwargs):
     """Class decorator for registering API resource classes"""
     # to avoid a circular dependency
-    from coinbase_commerce.api_resources.base import APIResource
+    from privacygate.api_resources.base import APIResource
 
     def resource_decorator(cls, resource_name_default=None):
         if not issubclass(cls, APIResource):
@@ -42,7 +42,7 @@ def load_resource_map():
     {str : Class}
     """
     # to avoid a circular dependency
-    from coinbase_commerce.api_resources.base import APIResource
+    from privacygate.api_resources.base import APIResource
 
     RESOURCE_MAP.update({
         k.RESOURCE_NAME: k
@@ -52,7 +52,7 @@ def load_resource_map():
 
 
 def clean_params(params, drop_nones=True, recursive=True):
-    """Clean up a dict of API parameters to be sent to the Coinbase API."""
+    """Clean up a dict of API parameters to be sent to the PrivacyGate API."""
     cleaned = {}
     for key, value in params.items():
         if drop_nones and value is None:
@@ -92,7 +92,7 @@ def convert_to_api_object(response, api_client=None, resource_class=None):
         if both are None returns APIObject
         """
         # to avoid a circular dependency
-        from coinbase_commerce.api_resources.base import APIObject
+        from privacygate.api_resources.base import APIObject
 
         if not RESOURCE_MAP:
             load_resource_map()
@@ -105,7 +105,7 @@ def convert_to_api_object(response, api_client=None, resource_class=None):
             if klass else APIObject(data=response)
         )
 
-    if isinstance(response, CoinbaseResponse):
+    if isinstance(response, PrivacyGateResponse):
         response = response.data
 
         # unpack nested data field

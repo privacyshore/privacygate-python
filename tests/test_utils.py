@@ -1,5 +1,5 @@
-from coinbase_commerce.api_resources.base import APIResource
-from coinbase_commerce.util import (
+from privacygate.api_resources.base import APIResource
+from privacygate.util import (
     RESOURCE_MAP,
     clean_params,
     register_resource_cls,

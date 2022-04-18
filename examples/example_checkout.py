@@ -5,7 +5,7 @@
 # local_price	               money	Optional	Price in local fiat currency
 # requested_info	           array	Optional	Information to collect from the customer: email, name
 """
-from coinbase_commerce import Client
+from privacygate import Client
 
 API_KEY = "API_KEY"
 

@@ -2,8 +2,8 @@ import os
 
 from flask import Flask, request
 
-from coinbase_commerce.error import WebhookInvalidPayload, SignatureVerificationError
-from coinbase_commerce.webhook import Webhook
+from privacygate.error import WebhookInvalidPayload, SignatureVerificationError
+from privacygate.webhook import Webhook
 
 """
 Flask server example to test webhooks

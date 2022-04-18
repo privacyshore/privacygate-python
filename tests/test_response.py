@@ -1,7 +1,7 @@
 import json
 import warnings
 
-from coinbase_commerce.response import CoinbaseResponse
+from privacygate.response import PrivacyGateResponse
 from tests.base_test_case import BaseTestCase
 
 
@@ -11,7 +11,7 @@ class TestResponse(BaseTestCase):
         code = 200
         headers = {'x-request-id': 'req_123456'}
         body = TestResponse.mock_body(with_warn)
-        response = CoinbaseResponse(body, code, headers)
+        response = PrivacyGateResponse(body, code, headers)
         return response, headers, body, code
 
     @staticmethod

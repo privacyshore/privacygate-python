@@ -1,5 +1,5 @@
 import mock
-from coinbase_commerce.auth import APIAuth
+from privacygate.auth import APIAuth
 from tests.base_test_case import BaseTestCase
 
 

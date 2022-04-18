@@ -1,4 +1,4 @@
-"""Setup script for Coinbase Commerce API client.
+"""Setup script for PrivacyGate API client.
 Also installs included versions of third party libraries, if those libraries
 are not already installed.
 """
@@ -9,16 +9,16 @@ from setuptools import setup
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 version_contents = {}
-with open(os.path.join(ROOT_DIR, 'coinbase_commerce', 'version.py')) as f:
+with open(os.path.join(ROOT_DIR, 'privacygate', 'version.py')) as f:
     exec(f.read(), version_contents)
 
 with open(os.path.join(ROOT_DIR, 'README.md')) as f:
     long_description = f.read()
 
 packages = [
-    'coinbase_commerce',
-    'coinbase_commerce.api_resources',
-    'coinbase_commerce.api_resources.base',
+    'privacygate',
+    'privacygate.api_resources',
+    'privacygate.api_resources.base',
 ]
 
 install_requires = [
@@ -33,22 +33,22 @@ tests_require = [
 ]
 
 setup(
-    name='coinbase_commerce',
+    name='privacygate',
     version=version_contents['VERSION'],
     packages=packages,
     include_package_data=True,
     license='Apache 2.0',
-    description='Coinbase Commerce API client library',
+    description='PrivacyGate API client library',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/coinbase/coinbase-commerce-python',
-    keywords=['api', 'coinbase commerce', 'client'],
+    url='https://github.com/privacyshore/privacygate-python',
+    keywords=['api', 'privacygate', 'client', 'bitcoin', 'payment gateway'],
     install_requires=install_requires,
     extras_require={
         'dev': ['nose>=1.3.4,<2', 'flake8>=3.5.0,<4'] + tests_require,
     },
     tests_require=tests_require,
-    author='Coinbase, Inc.',
+    author='PrivacyGate',
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',

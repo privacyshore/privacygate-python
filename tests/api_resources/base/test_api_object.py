@@ -1,7 +1,7 @@
 import json
 
-from coinbase_commerce import convert_to_api_object
-from coinbase_commerce.api_resources.base.api_object import APIObject
+from privacygate import convert_to_api_object
+from privacygate.api_resources.base.api_object import APIObject
 from tests.base_test_case import BaseTestCase
 
 
@@ -65,8 +65,8 @@ class TestApiObject(BaseTestCase):
         class Foo(APIObject):
             RESOURCE_NAME = 'foo'
 
-        import coinbase_commerce
-        coinbase_commerce.util.RESOURCE_MAP[Foo.RESOURCE_NAME] = Foo
+        import privacygate
+        privacygate.util.RESOURCE_MAP[Foo.RESOURCE_NAME] = Foo
         obj = convert_to_api_object({'resource': 'foo'})
         self.assertIsInstance(obj, Foo)
 
@@ -140,8 +140,8 @@ class TestApiObject(BaseTestCase):
         class Foo(APIObject):
             RESOURCE_NAME = 'foo'
 
-        import coinbase_commerce
-        coinbase_commerce.util.RESOURCE_MAP[Foo.RESOURCE_NAME] = Foo
+        import privacygate
+        privacygate.util.RESOURCE_MAP[Foo.RESOURCE_NAME] = Foo
         foo_obj = convert_to_api_object(api_client=api_client, response={'resource': 'foo'})
 
         api_obj = convert_to_api_object(api_client=api_client, response={'resource': 'bar'})

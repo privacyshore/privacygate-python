@@ -2,12 +2,12 @@ import json
 
 import six
 
-from coinbase_commerce import util
+from privacygate import util
 
 
 class APIObject(dict):
     """
-    Generic class used to represent a JSON response from the Coinbase API.
+    Generic class used to represent a JSON response from the PrivacyGate API.
     """
 
     def __init__(self, api_client=None, data=None):
